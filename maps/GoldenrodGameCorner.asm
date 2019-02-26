@@ -364,39 +364,29 @@ GoldenrodGameCornerPrizeVendorNoCoinCaseText:
 	done
 
 GoldenrodGameCornerPharmacistText:
-	text "I always play this"
-	line "slot machine. It"
-
-	para "pays out more than"
-	line "others, I think."
+	text "This machine looks"
+	line "the same as the"
+	cont "others."
 	done
 
 GoldenrodGameCornerPokefanM1Text:
-	text "I just love this"
-	line "new slot machine."
+	text "These machines"
+	line "seem different"
 
-	para "It's more of a"
-	line "challenge than the"
-	cont "ones in CELADON."
+	para "from the ones at"
+	line "CELADON CITY!"
 	done
 
 GoldenrodGameCornerCooltrainerMText:
-	text "Life is a gamble."
-	line "I'm going to flip"
-	cont "cards till I drop!"
+	text "Nothing is certain"
+	line "in this area."
 	done
 
 GoldenrodGameCornerPokefanFText:
 	text "Card flip…"
 
-	para "I prefer it over"
-	line "the slots because"
-
-	para "it's easier to"
-	line "figure the odds."
-
-	para "But the payout is"
-	line "much lower."
+	para "Different from the"
+	line "other machines."
 	done
 
 GoldenrodGameCornerCooltrainerFText:
@@ -416,17 +406,9 @@ GoldenrodGameCornerGentlemanText:
 	done
 
 GoldenrodGameCornerPokefanM2Text:
-	text "I couldn't win at"
-	line "the slots, and I"
-
-	para "blew it on card"
-	line "flipping…"
-
-	para "I got so furious,"
-	line "I tossed out my"
-
-	para "COIN CASE in the"
-	line "UNDERGROUND."
+	text "COIN CASE? I threw"
+	line "it away in the"
+	cont "UNDERGROUND."
 	done
 
 MoveTutorInsideText:

@@ -164,36 +164,25 @@ CeladonGameCornerPokefanMText:
 	done
 
 CeladonGameCornerTeacherText:
-	text "It's this machine"
-	line "I want."
-
-	para "It cleaned me out"
-	line "yesterday, so it"
-
-	para "should pay out"
-	line "today."
+	text "The weather"
+	line "outside is very"
+	cont "nice."
 	done
 
 CeladonGameCornerFishingGuruText:
-	text "I think this slot"
-	line "machine will pay"
-	cont "out…"
-
-	para "The odds vary"
-	line "among machines."
+	text "This machine looks"
+	line "the same as the"
+	cont "others."
 	done
 
 CeladonGameCornerFisherText1:
-	text "Gahahaha!"
+	text "Whoa!"
 
-	para "The coins just"
-	line "keep popping out!"
+	para "What? You want to"
+	line "play this machine?"
 
-	para "Hm? What, kid? You"
-	line "want to play?"
-
-	para "I'll share my luck"
-	line "with you!"
+	para "Here, take my"
+	line "coins."
 	done
 
 CeladonGameCornerFisherText2:
@@ -216,12 +205,8 @@ CeladonGameCornerFisherNoCoinCaseText:
 	done
 
 CeladonGameCornerFisherFullCoinCaseText:
-	text "Hey, your COIN"
-	line "CASE is full, kid."
-
-	para "You must be riding"
-	line "a winning streak"
-	cont "too."
+	text "Your COIN CASE is"
+	line "full."
 	done
 
 CeladonGymGuyText:
@@ -229,7 +214,7 @@ CeladonGymGuyText:
 	line "making!"
 
 	para "Are you playing"
-	line "the slots too?"
+	line "too?"
 
 	para "I'm trying to get"
 	line "enough coins for a"
@@ -240,11 +225,9 @@ CeladonGymGuyText:
 	done
 
 CeladonGameCornerGrampsText:
-	text "Hmmm… The odds are"
-	line "surely better for"
-
-	para "PIKACHU's line,"
-	line "but… What to do?"
+	text "Is there any"
+	line "difference between"
+	cont "these lines?"
 	done
 
 CeladonGameCornerPoster1Text:

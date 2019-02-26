@@ -469,11 +469,8 @@ UnknownText_0xa1c88:
 	para "CORNER tomorrow."
 	line "It's been a while."
 
-	para "You see, I have my"
-	line "favorite machine…"
-
-	para "It pays out a lot,"
-	line "I kid you not!"
+	para "Some machines pays"
+	line "out a lot."
 
 	para "Huh? Nuh-uh, it's"
 	line "my secret!"

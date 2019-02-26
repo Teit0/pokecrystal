@@ -1,4 +1,4 @@
-roms := pokecrystal.gbc pokecrystal11.gbc
+roms := pokecrystal.gbc
 
 crystal_obj := \
 audio.o \
@@ -63,7 +63,7 @@ tools:
 	$(MAKE) -C tools/
 
 
-$(crystal_obj):   RGBASMFLAGS = -D _CRYSTAL
+$(crystal_obj):   RGBASMFLAGS = -D _CRYSTAL -D _CRYSTAL11
 $(crystal11_obj): RGBASMFLAGS = -D _CRYSTAL -D _CRYSTAL11
 
 # The dep rules have to be explicit or else missing files won't be reported.
@@ -88,7 +88,7 @@ endif
 
 pokecrystal.gbc: $(crystal_obj) pokecrystal.link
 	$(RGBLINK) -n pokecrystal.sym -m pokecrystal.map -l pokecrystal.link -o $@ $(crystal_obj)
-	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
+	$(RGBFIX) -Cjv -i BYTU -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
 	tools/sort_symfile.sh pokecrystal.sym
 
 pokecrystal11.gbc: $(crystal11_obj) pokecrystal.link

@@ -214,14 +214,8 @@ CeladonGameCornerPrizeRoomGentlemanText:
 	done
 
 CeladonGameCornerPrizeRoomPharmacistText:
-	text "Whew…"
-
-	para "I've got to stay"
-	line "calm and cool…"
-
-	para "I can't lose my"
-	line "cool, or I'll lose"
-	cont "all my money…"
+	text "I don't want to"
+	line "lose my coins."
 	done
 
 CeladonPrizeRoom_PrizeVendorIntroText:

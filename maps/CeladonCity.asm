@@ -89,14 +89,8 @@ CeladonCityPoliwrathText:
 	done
 
 CeladonCityTeacher1Text:
-	text "I lost at the slot"
-	line "machines again…"
-
-	para "We girls also play"
-	line "the slots now."
-
-	para "You should check"
-	line "them out too."
+	text "I lost at the"
+	line "machines."
 	done
 
 CeladonCityGramps1Text:
@@ -212,8 +206,8 @@ CeladonCityMansionSignText:
 	done
 
 CeladonCityGameCornerSignText:
-	text "The Playground for"
-	line "Everybody--CELADON"
+	text "The Game Area for"
+	line "Grown-ups--CELADON"
 	cont "GAME CORNER"
 	done
 
