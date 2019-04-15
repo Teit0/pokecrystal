@@ -9,7 +9,7 @@ StdScripts::
 	dba MerchandiseShelfScript
 	dba TownMapScript
 	dba WindowScript
-	dba TVScript
+	dba main_o_TVScript
 	dba HomepageScript
 	dba Radio1Script
 	dba Radio2Script
@@ -191,9 +191,9 @@ TownMapScript:
 WindowScript:
 	farjumptext WindowText
 
-TVScript:
+main_o_TVScript:
 	opentext
-	farwritetext TVText
+	farwritetext main_o_TVText
 	waitbutton
 	closetext
 	end
@@ -1770,14 +1770,14 @@ GymStatue2Script:
 
 ReceiveItemScript:
 	waitsfx
-	farwritetext ReceivedItemText
+	farwritetext main_o_ReceivedItemText
 	playsound SFX_ITEM
 	waitsfx
 	end
 
 ReceiveTogepiEggScript:
 	waitsfx
-	farwritetext ReceivedItemText
+	farwritetext main_o_ReceivedItemText
 	playsound SFX_GET_EGG_FROM_DAY_CARE_LADY
 	waitsfx
 	end

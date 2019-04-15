@@ -182,8 +182,8 @@ NeighborScript:
 	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
 	end
 
-TVScript:
-	jumptext TVText
+data_maps_map_data_o_TVScript:
+	jumptext data_maps_map_data_o_TVText
 
 StoveScript:
 	jumptext StoveText
@@ -372,7 +372,7 @@ FridgeText:
 	line "tasty LEMONADE!"
 	done
 
-TVText:
+data_maps_map_data_o_TVText:
 	text "There's a movie on"
 	line "TV: Stars dot the"
 
@@ -399,7 +399,7 @@ PlayersHouse1F_MapEvents:
 	bg_event  0,  1, BGEVENT_READ, StoveScript
 	bg_event  1,  1, BGEVENT_READ, SinkScript
 	bg_event  2,  1, BGEVENT_READ, FridgeScript
-	bg_event  4,  1, BGEVENT_READ, TVScript
+	bg_event  4,  1, BGEVENT_READ, data_maps_map_data_o_TVScript
 
 	db 5 ; object events
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1

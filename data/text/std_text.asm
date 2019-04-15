@@ -168,7 +168,7 @@ WindowText:
 	line "Lookin' good!"
 	done
 
-TVText:
+main_o_TVText:
 	text "It's a TV."
 	done
 
@@ -239,7 +239,7 @@ ContestResults_PlayerWonAPrizeText:
 	text "!"
 	done
 
-ReceivedItemText:
+main_o_ReceivedItemText:
 	text "<PLAYER> received"
 	line "@"
 	text_ram wStringBuffer4
