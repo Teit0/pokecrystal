@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const ICEPATHB2FBLACKTHORNSIDE_POKE_BALL
 
+
+SECTION "IcePathB2FBlackthornSide_MapScripts", ROMX
+
 IcePathB2FBlackthornSide_MapScripts:
 	db 0 ; scene scripts
 

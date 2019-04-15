@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const ROUTE43MAHOGANYGATE_OFFICER
 
+
+SECTION "Route43MahoganyGate_MapScripts", ROMX
+
 Route43MahoganyGate_MapScripts:
 	db 0 ; scene scripts
 

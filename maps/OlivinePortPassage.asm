@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const OLIVINEPORTPASSAGE_POKEFAN_M
 
+
+SECTION "OlivinePortPassage_MapScripts", ROMX
+
 OlivinePortPassage_MapScripts:
 	db 0 ; scene scripts
 

@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const MANIASHOUSE_ROCKER
 
+
+SECTION "ManiasHouse_MapScripts", ROMX
+
 ManiasHouse_MapScripts:
 	db 0 ; scene scripts
 

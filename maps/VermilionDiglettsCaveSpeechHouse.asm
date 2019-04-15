@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const VERMILIONDIGLETTSCAVESPEECHHOUSE_GENTLEMAN
 
+
+SECTION "VermilionDiglettsCaveSpeechHouse_MapScripts", ROMX
+
 VermilionDiglettsCaveSpeechHouse_MapScripts:
 	db 0 ; scene scripts
 

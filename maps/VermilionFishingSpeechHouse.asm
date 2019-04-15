@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const VERMILIONFISHINGSPEECHHOUSE_FISHING_GURU
 
+
+SECTION "VermilionFishingSpeechHouse_MapScripts", ROMX
+
 VermilionFishingSpeechHouse_MapScripts:
 	db 0 ; scene scripts
 

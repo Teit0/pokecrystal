@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const VERMILIONPORTPASSAGE_TEACHER
 
+
+SECTION "VermilionPortPassage_MapScripts", ROMX
+
 VermilionPortPassage_MapScripts:
 	db 0 ; scene scripts
 

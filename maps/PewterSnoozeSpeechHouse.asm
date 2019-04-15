@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const PEWTERSNOOZESPEECHHOUSE_GRAMPS
 
+
+SECTION "PewterSnoozeSpeechHouse_MapScripts", ROMX
+
 PewterSnoozeSpeechHouse_MapScripts:
 	db 0 ; scene scripts
 

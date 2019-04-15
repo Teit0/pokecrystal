@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const WHIRLISLANDSW_POKE_BALL
 
+
+SECTION "WhirlIslandSW_MapScripts", ROMX
+
 WhirlIslandSW_MapScripts:
 	db 0 ; scene scripts
 

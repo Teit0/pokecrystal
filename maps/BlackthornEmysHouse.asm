@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const BLACKTHORNEMYSHOUSE_EMY
 
+
+SECTION "BlackthornEmysHouse_MapScripts", ROMX
+
 BlackthornEmysHouse_MapScripts:
 	db 0 ; scene scripts
 

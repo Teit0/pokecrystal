@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const MOUNTMOON_SILVER
 
+
+SECTION "MountMoon_MapScripts", ROMX
+
 MountMoon_MapScripts:
 	db 2 ; scene scripts
 	scene_script .RivalEncounter ; SCENE_DEFAULT
