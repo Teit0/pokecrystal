@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const HALLOFFAME_LANCE
 
+
+SECTION "HallOfFame_MapScripts", ROMX
+
 HallOfFame_MapScripts:
 	db 2 ; scene scripts
 	scene_script .EnterHallOfFame ; SCENE_DEFAULT

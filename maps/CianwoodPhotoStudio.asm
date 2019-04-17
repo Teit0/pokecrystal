@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const CIANWOODPHOTOSTUDIO_FISHING_GURU
 
+
+SECTION "CianwoodPhotoStudio_MapScripts", ROMX
+
 CianwoodPhotoStudio_MapScripts:
 	db 0 ; scene scripts
 

@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const OLIVINEGOODRODHOUSE_FISHING_GURU
 
+
+SECTION "OlivineGoodRodHouse_MapScripts", ROMX
+
 OlivineGoodRodHouse_MapScripts:
 	db 0 ; scene scripts
 

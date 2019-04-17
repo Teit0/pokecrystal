@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const KARENSROOM_KAREN
 
+
+SECTION "KarensRoom_MapScripts", ROMX
+
 KarensRoom_MapScripts:
 	db 2 ; scene scripts
 	scene_script .LockDoor ; SCENE_DEFAULT

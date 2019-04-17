@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const TINTOWER6F_POKE_BALL
 
+
+SECTION "TinTower6F_MapScripts", ROMX
+
 TinTower6F_MapScripts:
 	db 0 ; scene scripts
 

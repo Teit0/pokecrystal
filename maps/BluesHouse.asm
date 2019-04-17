@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const BLUESHOUSE_DAISY
 
+
+SECTION "BluesHouse_MapScripts", ROMX
+
 BluesHouse_MapScripts:
 	db 0 ; scene scripts
 

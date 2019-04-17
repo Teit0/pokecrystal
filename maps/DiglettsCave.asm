@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const DIGLETTSCAVE_POKEFAN_M
 
+
+SECTION "DiglettsCave_MapScripts", ROMX
+
 DiglettsCave_MapScripts:
 	db 0 ; scene scripts
 

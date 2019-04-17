@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const SAFARIZONEWARDENSHOME_LASS
 
+
+SECTION "SafariZoneWardensHome_MapScripts", ROMX
+
 SafariZoneWardensHome_MapScripts:
 	db 0 ; scene scripts
 

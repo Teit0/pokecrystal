@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const ROUTE26HEALHOUSE_TEACHER
 
+
+SECTION "Route26HealHouse_MapScripts", ROMX
+
 Route26HealHouse_MapScripts:
 	db 0 ; scene scripts
 

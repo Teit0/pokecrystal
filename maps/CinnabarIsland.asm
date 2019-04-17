@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const CINNABARISLAND_BLUE
 
+
+SECTION "CinnabarIsland_MapScripts", ROMX
+
 CinnabarIsland_MapScripts:
 	db 0 ; scene scripts
 

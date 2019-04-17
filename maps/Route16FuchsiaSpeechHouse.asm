@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const ROUTE16FUCHSIASPEECHHOUSE_SUPER_NERD
 
+
+SECTION "Route16FuchsiaSpeechHouse_MapScripts", ROMX
+
 Route16FuchsiaSpeechHouse_MapScripts:
 	db 0 ; scene scripts
 

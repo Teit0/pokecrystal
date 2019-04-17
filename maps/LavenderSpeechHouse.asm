@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const LAVENDERSPEECHHOUSE_POKEFAN_F
 
+
+SECTION "LavenderSpeechHouse_MapScripts", ROMX
+
 LavenderSpeechHouse_MapScripts:
 	db 0 ; scene scripts
 

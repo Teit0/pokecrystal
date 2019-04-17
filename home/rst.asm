@@ -1,29 +1,29 @@
 ; rst vectors
 
-SECTION "rst0", ROM0
+SECTION "rst0", ROM0[$0000]
 rst0:
 	di
 	jp Start
 
-SECTION "rst8", ROM0 ; rst FarCall
+SECTION "rst8", ROM0[$0008] ; rst FarCall
 rst8:
 	jp FarCall_hl
 
-SECTION "rst10", ROM0 ; rst Bankswitch
+SECTION "rst10", ROM0[$0010] ; rst Bankswitch
 rst10:
 	ldh [hROMBank], a
 	ld [MBC3RomBank], a
 	ret
 
-SECTION "rst18", ROM0
+SECTION "rst18", ROM0[$0018]
 rst18:
 	rst $38
 
-SECTION "rst20", ROM0
+SECTION "rst20", ROM0[$0020]
 rst20:
 	rst $38
 
-SECTION "rst28", ROM0 ; rst JumpTable
+SECTION "rst28", ROM0[$0028] ; rst JumpTable
 rst28:
 	push de
 	ld e, a
@@ -39,6 +39,6 @@ rst28:
 ; SECTION "rst30", ROM0
 ; rst30 is midst rst28
 
-SECTION "rst38", ROM0
+SECTION "rst38", ROM0[$0038]
 rst38:
 	rst $38

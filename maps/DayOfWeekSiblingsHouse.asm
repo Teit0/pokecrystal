@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const DAYOFWEEKSIBLINGSHOUSE_POKEDEX
 
+
+SECTION "DayOfWeekSiblingsHouse_MapScripts", ROMX
+
 DayOfWeekSiblingsHouse_MapScripts:
 	db 0 ; scene scripts
 

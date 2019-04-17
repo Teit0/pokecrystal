@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const ROUTE2NUGGETHOUSE_FISHER
 
+
+SECTION "Route2NuggetHouse_MapScripts", ROMX
+
 Route2NuggetHouse_MapScripts:
 	db 0 ; scene scripts
 

@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const REDSHOUSE1F_REDS_MOM
 
+
+SECTION "RedsHouse1F_MapScripts", ROMX
+
 RedsHouse1F_MapScripts:
 	db 1 ; scene scripts
 	scene_script .DummyScene

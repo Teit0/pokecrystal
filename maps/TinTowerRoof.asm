@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const TINTOWERROOF_HO_OH
 
+
+SECTION "TinTowerRoof_MapScripts", ROMX
+
 TinTowerRoof_MapScripts:
 	db 0 ; scene scripts
 
