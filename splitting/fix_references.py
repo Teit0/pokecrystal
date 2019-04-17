@@ -255,4 +255,9 @@ refs["NamesPointers"]["MoveDescriptions"] = True
 refs["Unreferenced_Function241d5"]["AdvanceMobileInactivityTimerAndCheckExpired"] = True
 refs["Unreferenced_Function241d5"]["HDMATransferTileMapToWRAMBank3"] = True
 
+# SPLIT: TiffanysFamilyMembers -> BrotherString (and co.)
+for symbol in refs["TiffanysFamilyMembers"]:
+    if not refs["TiffanysFamilyMembers"][symbol]:
+        refs["TiffanysFamilyMembers"][symbol] = True
+
 args.output.write(dumps(refs, indent=4))

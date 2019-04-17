@@ -78,22 +78,27 @@ for file in ["common_%d.asm" % x for x in range(1, 4)] + ["std_text.asm"]:
 mergegroup(scrapelabels(join(args.prefix, "data", "battle_tower", "trainer_text.asm")))
 mergegroup(scrapelabels(join(args.prefix, "data", "battle_tower", "unknown.asm")))
 
-# Phone scripts all belong together.
-# Half of them reference PhoneScript_HangupText directly, anyway.
-labels = []
-for file in ["generic_caller", "jack_gossip", "liz_gossip", "chad_gossip",
-             "brent_gossip", "irwin_gossip", "hangups", "reminders",
-             "hangups_2", "reminders_2", "bike_shop"]:
-    labels += scrapelabels(join(args.prefix, "engine", "phone", "scripts", "%s.asm" % file))
-mergegroup(labels)
+# All of the phone scripts belong in at least the same bank,
+#  there's no use splitting them beyond file boundaries.
+callers = []
+for file in listdir(join(args.prefix, "engine", "phone", "scripts")):
+    # Except for the callers, which I can't really split in any meaningful way.
+    # PhoneScript_HangupText_Male/Female are referenced by nearly everything.
+    if file.endswith("_gossip.asm") or file.startswith("hangups") or file.startswith("reminders") or file in ["bike_shop.asm", "generic_caller.asm"]:
+        callers += scrapelabels(join(args.prefix, "engine", "phone", "scripts", file))
+        continue
 
-# The PhoneScripts can all be found in the same bank, and belong together despite
-#   BANK()-referencing most things.
-# Tiffany's script references strings at the end of generic_calls.asm anyway.
-labels = []
-for file in ["unused", "mom", "bill", "elm", "jack", "beverly", "huey", "gaven", "beth", "jose", "reena", "joey", "wade", "ralph", "liz", "anthony", "todd", "gina", "irwin", "arnie", "alan", "dana", "chad", "derek", "tully", "brent", "tiffany", "vance", "wilton", "kenji", "parry", "erin", "generic_callee"]:
-    labels += scrapelabels(join(args.prefix, "engine", "phone", "scripts", "%s.asm" % file))
-mergegroup(labels)
+    # And the family strings used by TiffanysFamilyMemebers...
+    if file == "generic_callee.asm":
+        labels = scrapelabels(join(args.prefix, "engine", "phone", "scripts", "generic_callee.asm"))
+        family = ["GrandmaString", "GrandpaString", "MomString", "DadString", "SisterString", "BrotherString"]
+        labels = [x for x in labels if x not in family]
+        mergegroup(family)
+        mergegroup(labels)
+        continue
+
+    mergegroup(scrapelabels(join(args.prefix, "engine", "phone", "scripts", file)))
+mergegroup(callers)
 
 # A lot of songs abuse fallthrough into non-local labels
 #   (because whoever extracted them didn't bother fixing them afterwards, 
