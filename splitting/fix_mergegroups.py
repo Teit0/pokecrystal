@@ -114,6 +114,9 @@ mergegroup(scrapelabels(join(args.prefix, "engine", "events", "specials.asm")))
 # As such, it makes little sense to split them.
 mergegroup(scrapelabels(join(args.prefix, "engine", "events", "std_scripts.asm")))
 
+# These utility functions are all related to objects
+mergegroup(scrapelabels(join(args.prefix, "engine", "overworld", "player_object.asm")))
+
 # DefaultMart doesn't need its own section despite being referenced through BANK()
 mergegroup(["DefaultMart", "Marts"])
 
