@@ -5,7 +5,7 @@ from json import loads, dumps
 from os import listdir
 from os.path import join
 
-from lib import read_symbols, sort_groups
+from lib import read_symbols, sort_groups, scrapelabels
 
 import argparse
 parser = argparse.ArgumentParser()
@@ -18,17 +18,6 @@ args = parser.parse_args()
 syms = read_symbols(open(join(args.prefix, "pokecrystal.sym")))
 groups = loads(args.groups.read())
 refs = loads(args.refs.read())
-
-def scrapelabels(file):
-    labels = []
-    for line in open(file):
-        if not (line.startswith("\t") or line.startswith(" ") or line.startswith(";") or line.startswith(".")):
-            split = line.split(":")
-            if len(split) > 1:
-                if split[1].split(";")[0].strip().lower() == "macro":
-                    continue
-                labels.append(split[0])
-    return labels
 
 def mergegroup(labels):
     finalgroups = {}
@@ -116,6 +105,9 @@ mergegroup(scrapelabels(join(args.prefix, "engine", "events", "std_scripts.asm")
 
 # These utility functions are all related to objects
 mergegroup(scrapelabels(join(args.prefix, "engine", "overworld", "player_object.asm")))
+
+# This function is only ever used by another one in the same bank, it doesn't need a separate section
+mergegroup(["HDMATransfer_FillBGMap0WithBlack", "ReanchorBGMap_NoOAMUpdate"])
 
 # DefaultMart doesn't need its own section despite being referenced through BANK()
 mergegroup(["DefaultMart", "Marts"])

@@ -260,4 +260,9 @@ for symbol in refs["TiffanysFamilyMembers"]:
     if not refs["TiffanysFamilyMembers"][symbol]:
         refs["TiffanysFamilyMembers"][symbol] = True
 
+# SPLIT: Misc.
+refs["MapObjectMovementPattern"]["CanObjectMoveInDirection"] = True
+refs["ReanchorBGMap_NoOAMUpdate"]["ApplyBGMapAnchorToObjects"] = True
+refs["GameInit"]["WriteOAMDMACodeToHRAM"] = True
+
 args.output.write(dumps(refs, indent=4))

@@ -68,3 +68,14 @@ def get_group_limits(syms, group):
         if addr > max: max = addr
 
     return min, max
+
+def scrapelabels(file):
+    labels = []
+    for line in open(file):
+        if not (line.startswith("\t") or line.startswith(" ") or line.startswith(";") or line.startswith(".")):
+            split = line.split(":")
+            if len(split) > 1:
+                if split[1].split(";")[0].strip().lower() == "macro":
+                    continue
+                labels.append(split[0])
+    return labels
