@@ -272,5 +272,6 @@ refs["ReanchorBGMap_NoOAMUpdate"]["ApplyBGMapAnchorToObjects"] = True
 refs["GameInit"]["WriteOAMDMACodeToHRAM"] = True
 refs["GiveItem"]["TryGiveItemToPartymon"] = True
 refs["ComputeAIContestantScores"]["CheckBugContestContestantFlag"] = True
+refs["Kurt_SelectQuantity_InterpretJoypad"]["BuySellToss_InterpretJoypad"] = True
 
 args.output.write(dumps(refs, indent=4))

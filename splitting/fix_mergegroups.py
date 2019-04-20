@@ -130,6 +130,9 @@ mergegroup(["HDMATransfer_FillBGMap0WithBlack", "ReanchorBGMap_NoOAMUpdate"])
 # This function is only BANK() referenced because the CallScript abi requires that, but there's no real reason for it.
 mergegroup(["CantCutScript", "TryCutOW"])
 
+# These assets belong together...
+mergegroup(["CardStatusGFX", "LeaderGFX", "LeaderGFX2", "BadgeGFX", "BadgeGFX2", "CardRightCornerGFX"])
+
 # SPLIT: Fix consequences of engine/pokemon/health.asm split
 mergegroup(["AnimateHPBar", "ComputeHPBarPixels"])
 
