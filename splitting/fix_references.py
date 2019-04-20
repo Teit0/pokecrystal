@@ -270,5 +270,7 @@ refs["LongHPBarAnim_UpdateTiles"]["ComputeHPBarPixels"] = True
 refs["MapObjectMovementPattern"]["CanObjectMoveInDirection"] = True
 refs["ReanchorBGMap_NoOAMUpdate"]["ApplyBGMapAnchorToObjects"] = True
 refs["GameInit"]["WriteOAMDMACodeToHRAM"] = True
+refs["GiveItem"]["TryGiveItemToPartymon"] = True
+refs["ComputeAIContestantScores"]["CheckBugContestContestantFlag"] = True
 
 args.output.write(dumps(refs, indent=4))

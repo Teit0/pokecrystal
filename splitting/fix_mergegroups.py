@@ -106,6 +106,9 @@ mergegroup(scrapelabels(join(args.prefix, "engine", "events", "std_scripts.asm")
 # These utility functions are all related to objects
 mergegroup(scrapelabels(join(args.prefix, "engine", "overworld", "player_object.asm")))
 
+# These scripts call upon asm that is only used here
+mergegroup(scrapelabels(join(args.prefix, "engine", "events", "whiteout.asm")))
+
 # DefaultMart doesn't need its own section despite being referenced through BANK()
 mergegroup(["DefaultMart", "Marts"])
 
