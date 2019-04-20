@@ -106,9 +106,6 @@ mergegroup(scrapelabels(join(args.prefix, "engine", "events", "std_scripts.asm")
 # These utility functions are all related to objects
 mergegroup(scrapelabels(join(args.prefix, "engine", "overworld", "player_object.asm")))
 
-# This function is only ever used by another one in the same bank, it doesn't need a separate section
-mergegroup(["HDMATransfer_FillBGMap0WithBlack", "ReanchorBGMap_NoOAMUpdate"])
-
 # DefaultMart doesn't need its own section despite being referenced through BANK()
 mergegroup(["DefaultMart", "Marts"])
 
@@ -123,5 +120,14 @@ mergegroup(["EggAnimation", "CelebiAnimation"])
 mergegroup(["EggAnimationIdle", "CelebiAnimationIdle"])
 mergegroup(["EggBitmasks", "CelebiBitmasks"])
 mergegroup(["EggFrames", "CelebiFrames"])
+
+# This function is only ever used by another one in the same bank, it doesn't need a separate section
+mergegroup(["HDMATransfer_FillBGMap0WithBlack", "ReanchorBGMap_NoOAMUpdate"])
+
+# This function is only BANK() referenced because the CallScript abi requires that, but there's no real reason for it.
+mergegroup(["CantCutScript", "TryCutOW"])
+
+# SPLIT: Fix consequences of engine/pokemon/health.asm split
+mergegroup(["AnimateHPBar", "ComputeHPBarPixels"])
 
 args.out.write(dumps(sort_groups(groups, True), indent=4))

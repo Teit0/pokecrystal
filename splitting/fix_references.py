@@ -260,6 +260,12 @@ for symbol in refs["TiffanysFamilyMembers"]:
     if not refs["TiffanysFamilyMembers"][symbol]:
         refs["TiffanysFamilyMembers"][symbol] = True
 
+# SPLIT: Untangle engine/pokemon/health.asm from engine/battle/anim_hp_bar.asm
+refs["AnimateHPBar"]["_AnimateHPBar"] = True
+refs["_AnimateHPBar"]["ComputeHPBarPixels"] = True
+refs["LongAnim_UpdateVariables"]["ComputeHPBarPixels"] = True
+refs["LongHPBarAnim_UpdateTiles"]["ComputeHPBarPixels"] = True
+
 # SPLIT: Misc.
 refs["MapObjectMovementPattern"]["CanObjectMoveInDirection"] = True
 refs["ReanchorBGMap_NoOAMUpdate"]["ApplyBGMapAnchorToObjects"] = True
