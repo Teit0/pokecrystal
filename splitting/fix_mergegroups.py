@@ -136,4 +136,7 @@ mergegroup(["CardStatusGFX", "LeaderGFX", "LeaderGFX2", "BadgeGFX", "BadgeGFX2",
 # SPLIT: Fix consequences of engine/pokemon/health.asm split
 mergegroup(["AnimateHPBar", "ComputeHPBarPixels"])
 
+# SPLIT: Fix consequences of enigne/battle/read_trainer_attributes.asm split
+mergegroup(["GetTrainerClassName", "GetTrainerAttributes"])
+
 args.out.write(dumps(sort_groups(groups, True), indent=4))

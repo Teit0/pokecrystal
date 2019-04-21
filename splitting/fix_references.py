@@ -266,6 +266,10 @@ refs["_AnimateHPBar"]["ComputeHPBarPixels"] = True
 refs["LongAnim_UpdateVariables"]["ComputeHPBarPixels"] = True
 refs["LongHPBarAnim_UpdateTiles"]["ComputeHPBarPixels"] = True
 
+# SPLIT: Untangle engine/battle/ai/items.asm and data/trainers/attributes.asm
+refs["AI_SwitchOrTryItem"]["TrainerClassAttributes"] = True
+refs["AI_TryItem"]["TrainerClassAttributes"] = True
+
 # SPLIT: Misc.
 refs["MapObjectMovementPattern"]["CanObjectMoveInDirection"] = True
 refs["ReanchorBGMap_NoOAMUpdate"]["ApplyBGMapAnchorToObjects"] = True
