@@ -251,9 +251,12 @@ refs["CheckObjectTime"]["CopyObjectStruct"] = True
 refs["GetBaseData"]["UnknownEggPic"] = True
 refs["InitList"]["ItemAttributes"] = True
 refs["InitList"]["ItemNames"] = True
+refs["InitList"]["PokemonNames"] = True
 refs["NamesPointers"]["MoveDescriptions"] = True
 refs["Unreferenced_Function241d5"]["AdvanceMobileInactivityTimerAndCheckExpired"] = True
 refs["Unreferenced_Function241d5"]["HDMATransferTileMapToWRAMBank3"] = True
+refs["Unused_PlaceEnemyHPLevel"]["CopyMonToTempMon"] = True # SPLIT
+refs["Unused_PlaceEnemyHPLevel"]["DrawEnemyHP"] = True # SPLIT
 
 # SPLIT: TiffanysFamilyMembers -> BrotherString (and co.)
 for symbol in refs["TiffanysFamilyMembers"]:
@@ -266,9 +269,13 @@ refs["_AnimateHPBar"]["ComputeHPBarPixels"] = True
 refs["LongAnim_UpdateVariables"]["ComputeHPBarPixels"] = True
 refs["LongHPBarAnim_UpdateTiles"]["ComputeHPBarPixels"] = True
 
-# SPLIT: Untangle engine/battle/ai/items.asm and data/trainers/attributes.asm
+# SPLIT: Untangle engine/battle/ai/items.asm from data/trainers/attributes.asm
 refs["AI_SwitchOrTryItem"]["TrainerClassAttributes"] = True
 refs["AI_TryItem"]["TrainerClassAttributes"] = True
+
+# SPLIT: Untangle engine/pokemon/party_menu.asm from engine/pokemon/mon_stats.asm
+refs["PlacePartyMonStatus"]["PlaceStatusString"] = True
+refs["PlacePartyMonGender"]["GetGender"] = True
 
 # SPLIT: Misc.
 refs["MapObjectMovementPattern"]["CanObjectMoveInDirection"] = True
