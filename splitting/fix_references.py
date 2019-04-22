@@ -8,7 +8,7 @@
 from json import loads, dumps
 from os.path import join
 
-from lib import read_symbols
+from lib import read_symbols, scrapelabels
 
 import argparse
 
@@ -258,6 +258,21 @@ refs["Unreferenced_Function241d5"]["HDMATransferTileMapToWRAMBank3"] = True
 refs["Unused_PlaceEnemyHPLevel"]["CopyMonToTempMon"] = True # SPLIT
 refs["Unused_PlaceEnemyHPLevel"]["DrawEnemyHP"] = True # SPLIT
 
+
+def splitfiles(file1, file2):
+    labels1 = scrapelabels(join(args.prefix, file1))
+    labels2 = scrapelabels(join(args.prefix, file2))
+
+    for label in labels1:
+        for ref in refs[label]:
+            if not refs[label][ref] and ref in labels2:
+                refs[label][ref] = True
+
+    for label in labels2:
+        for ref in refs[label]:
+            if not refs[label][ref] and ref in labels1:
+                refs[label][ref] = True
+
 # SPLIT: TiffanysFamilyMembers -> BrotherString (and co.)
 for symbol in refs["TiffanysFamilyMembers"]:
     if not refs["TiffanysFamilyMembers"][symbol]:
@@ -276,6 +291,9 @@ refs["AI_TryItem"]["TrainerClassAttributes"] = True
 # SPLIT: Untangle engine/pokemon/party_menu.asm from engine/pokemon/mon_stats.asm
 refs["PlacePartyMonStatus"]["PlaceStatusString"] = True
 refs["PlacePartyMonGender"]["GetGender"] = True
+
+# SPLIT: There's a bunch of shit between these files with some useful things in the middle
+splitfiles("mobile/mobile_22.asm", "mobile/mobile_22_2.asm")
 
 # SPLIT: Misc.
 refs["MapObjectMovementPattern"]["CanObjectMoveInDirection"] = True

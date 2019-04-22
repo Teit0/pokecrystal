@@ -133,10 +133,36 @@ mergegroup(["CantCutScript", "TryCutOW"])
 # These assets belong together...
 mergegroup(["CardStatusGFX", "LeaderGFX", "LeaderGFX2", "BadgeGFX", "BadgeGFX2", "CardRightCornerGFX"])
 
+
+def unsplitfiles(file1, file2):
+    # Make sure that functions in split files stay grouped together if they're referenced by the same things.
+
+    group1 = set()
+    group2 = set()
+
+    labels1 = scrapelabels(join(args.prefix, file1))
+    labels2 = scrapelabels(join(args.prefix, file2))
+
+    for label in labels1:
+        for ref in refs[label]:
+            if refs[label][ref] and ref in labels2:
+                group2.add(ref)
+
+    for label in labels2:
+        for ref in refs[label]:
+            if refs[label][ref] and ref in labels1:
+                group1.add(ref)
+
+    mergegroup(list(group1))
+    mergegroup(list(group2))
+
 # SPLIT: Fix consequences of engine/pokemon/health.asm split
 mergegroup(["AnimateHPBar", "ComputeHPBarPixels"])
 
 # SPLIT: Fix consequences of enigne/battle/read_trainer_attributes.asm split
 mergegroup(["GetTrainerClassName", "GetTrainerAttributes"])
+
+# SPLIT: Fix consequences of mobile/mobile_22.asm and mobile/mobile_22_2.asm split
+unsplitfiles("mobile/mobile_22.asm", "mobile/mobile_22_2.asm")
 
 args.out.write(dumps(sort_groups(groups, True), indent=4))
