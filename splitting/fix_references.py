@@ -295,6 +295,10 @@ refs["PlacePartyMonGender"]["GetGender"] = True
 # SPLIT: There's a bunch of shit between these files with some useful things in the middle
 splitfiles("mobile/mobile_22.asm", "mobile/mobile_22_2.asm")
 
+# SPLIT: This copytilemapatonce is only used by engine/battle/battle_transition.asm
+refs["DoBattleTransition"]["BattleStart_CopyTilemapAtOnce"] = True
+refs["StartTrainerBattle_LoadPokeBallGraphics"]["BattleStart_CopyTilemapAtOnce"] = True
+
 # SPLIT: Misc.
 refs["MapObjectMovementPattern"]["CanObjectMoveInDirection"] = True
 refs["ReanchorBGMap_NoOAMUpdate"]["ApplyBGMapAnchorToObjects"] = True
