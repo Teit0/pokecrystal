@@ -307,5 +307,6 @@ refs["GiveItem"]["TryGiveItemToPartymon"] = True
 refs["ComputeAIContestantScores"]["CheckBugContestContestantFlag"] = True
 refs["Kurt_SelectQuantity_InterpretJoypad"]["BuySellToss_InterpretJoypad"] = True
 refs["_DummyGame"]["ret_e00ed"] = True
+refs["BugContestResultsWarpScript"]["Movement_ContestResults_WalkAfterWarp"] = True
 
 args.output.write(dumps(refs, indent=4))

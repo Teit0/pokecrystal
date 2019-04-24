@@ -96,16 +96,6 @@ mergegroup(callers)
 for file in listdir(join(args.prefix, "audio", "music")):
     mergegroup(scrapelabels(join(args.prefix, "audio", "music", file)))
 
-# A lot of specials are defined in the same area, despite only being referenced through BANK()
-mergegroup(scrapelabels(join(args.prefix, "engine", "events", "specials.asm")))
-
-# All StdScripts are in the same area, despite only being referenced through BANK()
-# As such, it makes little sense to split them.
-mergegroup(scrapelabels(join(args.prefix, "engine", "events", "std_scripts.asm")))
-
-# These utility functions are all related to objects
-mergegroup(scrapelabels(join(args.prefix, "engine", "overworld", "player_object.asm")))
-
 # These scripts call upon asm that is only used here
 mergegroup(scrapelabels(join(args.prefix, "engine", "events", "whiteout.asm")))
 
