@@ -2,8 +2,6 @@ INCLUDE "constants.asm"
 
 ;SECTION independent
 INCLUDE "engine/link/place_waiting_text.asm"
-
-SECTION "WriteOAMDMACodeToHRAM - Function7171", ROMX
 INCLUDE "engine/gfx/load_push_oam.asm"
 INCLUDE "engine/overworld/map_objects.asm"
 INCLUDE "engine/menus/intro_menu.asm"
@@ -28,8 +26,6 @@ INCLUDE "engine/gfx/color.asm"
 INCLUDE "engine/events/checktime.asm"
 INCLUDE "engine/events/specials.asm"
 INCLUDE "engine/math/print_num.asm"
-
-;SECTION "ComputeHPBarPixels - ShortHPBar_CalcPixelFrame", ROMX
 INCLUDE "engine/pokemon/health.asm"
 INCLUDE "engine/events/overworld.asm"
 INCLUDE "engine/items/items.asm"
@@ -46,8 +42,6 @@ INCLUDE "engine/events/bug_contest/caught_mon.asm"
 INCLUDE "engine/items/item_effects.asm"
 INCLUDE "engine/battle_anims/pokeball_wobble.asm"
 INCLUDE "engine/pokemon/knows_move.asm"
-
-SECTION "Pack - UseRegisteredItem", ROMX
 INCLUDE "engine/items/pack.asm"
 INCLUDE "engine/overworld/time.asm"
 INCLUDE "engine/items/tmhm2.asm"
@@ -57,6 +51,8 @@ INCLUDE "engine/events/heal_machine_anim.asm"
 INCLUDE "engine/events/whiteout.asm"
 INCLUDE "engine/events/forced_movement.asm"
 INCLUDE "engine/events/itemfinder.asm"
+
+SECTION "StartMenu - UseRegisteredItem", ROMX, BANK[$04]
 INCLUDE "engine/menus/start_menu.asm"
 INCLUDE "engine/pokemon/mon_menu.asm"
 INCLUDE "engine/overworld/select_menu.asm"
@@ -66,13 +62,9 @@ INCLUDE "engine/events/elevator.asm"
 INCLUDE "engine/events/bug_contest/contest.asm"
 INCLUDE "engine/events/misc_scripts_2.asm"
 INCLUDE "engine/events/std_collision.asm"
-
-SECTION "_BugContestJudging - BugCatchingContestantEventFlagTable", ROMX
 INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
-
-;SECTION independent
 INCLUDE "engine/pokemon/correct_party_errors.asm"
 INCLUDE "engine/math/get_square_root.asm"
 INCLUDE "engine/rtc/rtc.asm"
@@ -107,8 +99,6 @@ INCLUDE "engine/items/switch_items.asm"
 INCLUDE "engine/menus/menu_2.asm"
 INCLUDE "engine/pokemon/mon_submenu.asm"
 INCLUDE "engine/battle/menu.asm"
-
-SECTION "SelectQuantityToToss - Kurt_SelectQuantity_InterpretJoypad", ROMX
 INCLUDE "engine/items/buy_sell_toss.asm"
 INCLUDE "engine/menus/trainer_card.asm"
 INCLUDE "engine/events/prof_oaks_pc.asm"
@@ -119,8 +109,6 @@ INCLUDE "engine/battle/returntobattle_useball.asm"
 INCLUDE "engine/battle/consume_held_item.asm"
 INCLUDE "data/moves/effects.asm"
 INCLUDE "engine/events/kurt_selectquantity_interpretjoypad.asm"
-
-;SECTION independent
 INCLUDE "engine/link/link.asm"
 INCLUDE "engine/overworld/wildmons.asm"
 INCLUDE "engine/battle/link_result.asm"
@@ -150,13 +138,9 @@ INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
 INCLUDE "engine/battle/effect_commands.asm"
-
-SECTION "AI_SwitchOrTryItem - TrainerClassAttributes", ROMX
 INCLUDE "engine/battle/ai/items.asm"
 INCLUDE "engine/battle/ai/scoring.asm"
 INCLUDE "engine/battle/read_trainer_attributes.asm"
-
-;SECTION independent
 INCLUDE "engine/battle/read_trainer_party.asm"
 INCLUDE "engine/battle/core.asm"
 INCLUDE "data/battle/effect_command_pointers.asm"
@@ -224,8 +208,6 @@ INCLUDE "mobile/print_opp_message.asm"
 INCLUDE "engine/battle/check_battle_scene.asm"
 INCLUDE "engine/movie/gbc_only.asm"
 INCLUDE "engine/events/poke_seer.asm"
-
-SECTION "SelectMonFromParty - ParString", ROMX
 INCLUDE "engine/pokemon/party_menu.asm"
 INCLUDE "engine/events/poisonstep.asm"
 INCLUDE "engine/events/sweet_scent.asm"
@@ -237,8 +219,6 @@ INCLUDE "engine/pokemon/tempmon.asm"
 INCLUDE "engine/pokemon/types.asm"
 INCLUDE "engine/battle/unreferenced_getgen1trainerclassname.asm"
 INCLUDE "engine/pokemon/mon_stats.asm"
-
-SECTION "InitList - PokemonNames", ROMX
 INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
 INCLUDE "engine/pokemon/switchpartymons.asm"
@@ -246,8 +226,6 @@ INCLUDE "engine/gfx/load_pics.asm"
 INCLUDE "engine/pokemon/move_mon_wo_mail.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
-
-;SECTION independent
 INCLUDE "data/pokemon/unused_pic_banks.asm"
 
 SECTION "UnknownEggPic", ROMX
@@ -285,19 +263,13 @@ INCLUDE "gfx/battle_anims.asm"
 INCLUDE "engine/events/halloffame.asm"
 INCLUDE "engine/events/kurt.asm"
 INCLUDE "engine/gfx/player_gfx.asm"
-
-SECTION "String_89116 - Unknown_8ba1f", ROMX
 INCLUDE "mobile/mobile_22.asm"
 INCLUDE "engine/events/unown_walls.asm"
 INCLUDE "engine/events/buena.asm"
 INCLUDE "engine/events/dratini.asm"
 INCLUDE "engine/events/battle_tower/rules.asm"
 INCLUDE "mobile/mobile_22_2.asm"
-
-;SECTION independent
 INCLUDE "engine/tilesets/timeofday_pals.asm"
-
-SECTION "DoBattleTransition - BattleStart_CopyTilemapAtOnce", ROMX
 INCLUDE "engine/battle/battle_transition.asm"
 INCLUDE "engine/events/field_moves.asm"
 INCLUDE "engine/events/magnet_train.asm"
@@ -355,8 +327,6 @@ INCLUDE "engine/events/fishing_gfx.asm"
 INCLUDE "engine/pokegear/radio.asm"
 INCLUDE "engine/pokemon/mail_2.asm"
 INCLUDE "engine/events/std_scripts.asm"
-
-SECTION "UnusedPhoneScript - BrotherString", ROMX
 INCLUDE "engine/phone/scripts/unused.asm"
 INCLUDE "engine/phone/scripts/mom.asm"
 INCLUDE "engine/phone/scripts/bill.asm"
@@ -390,8 +360,6 @@ INCLUDE "engine/phone/scripts/kenji.asm"
 INCLUDE "engine/phone/scripts/parry.asm"
 INCLUDE "engine/phone/scripts/erin.asm"
 INCLUDE "engine/phone/scripts/generic_callee.asm"
-
-;SECTION independent
 INCLUDE "engine/events/trainer_scripts.asm"
 INCLUDE "engine/battle_anims/bg_effects.asm"
 INCLUDE "data/moves/animations.asm"
@@ -452,13 +420,9 @@ INCLUDE "gfx/pokemon/unown_frames.asm"
 
 ;SECTION independent
 INCLUDE "engine/events/print_unown_2.asm"
-
-SECTION "Unknown_e00ed - LZ_e2221", ROMX
 INCLUDE "engine/games/card_flip.asm"
 INCLUDE "engine/games/unown_puzzle.asm"
 INCLUDE "engine/games/dummy_game.asm"
-
-;SECTION independent
 INCLUDE "engine/pokemon/bills_pc.asm"
 
 SECTION "CopyrightGFX", ROMX
@@ -599,6 +563,8 @@ INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
 
+; This section is read by external programs/tools,
+;   and is as such expected to be at the end of the ROM.
 SECTION "Mobile Stadium 2", ROMX[$7de0], BANK[$7f]
 
 if DEF(_CRYSTAL_AU)

@@ -30,27 +30,96 @@ ROM0
 	"Home"
 ROMX $01
 	"PlaceWaitingText" ; engine/link/place_waiting_text.asm
-	"WriteOAMDMACodeToHRAM - Function7171" ; main.asm
+	"WriteOAMDMACodeToHRAM" ; engine/gfx/load_push_oam.asm
+	"Facings - InitSprites" ; engine/overworld/map_objects.asm
+	"_MainMenu - GameInit" ; engine/menus/intro_menu.asm
+	"ReanchorBGMap_NoOAMUpdate - HDMATransfer_FillBGMap0WithBlack" ; engine/overworld/init_map.asm
+	"LearnMove - Text_CantForgetHM" ; engine/pokemon/learn.asm
+	"CorrectNickErrors" ; engine/pokemon/correct_nick_errors.asm
+
+	; engine/math/math.asm
+	"_Multiply"
+	"_Divide"
+
+	"ItemAttributes" ; data/items/attributes.asm
+	"CanObjectMoveInDirection - Function7171" ; engine/overworld/npc_movement.asm
 	"GetFirstPokemonHappiness - CopyPokemonName_Buffer1_Buffer3" ; main.asm
 	"DummyPredef1" ; engine/events/haircut.asm
 ROMX $02
 	"BlankScreen" ; engine/menus/blank_screen.asm
-	"SpawnPlayer - QueueFollowerFirstStep" ; engine/overworld/player_object.asm
+
+	; engine/overworld/player_object.asm
+	"SpawnPlayer - CopyTempObjectToObjectStruct"
+	"TrainerWalkToPlayer"
+	"SurfStartStep"
+	"FollowNotExact"
+	"GetRelativeFacing"
+	"QueueFollowerFirstStep"
+
 	"_Sine" ; engine/math/sine.asm
 	"GetPredefPointer - PredefPointers" ; engine/predef.asm
 	"LoadSGBLayout - SlotMachinePals" ; engine/gfx/color.asm
 ROMX $03
 	"CheckTime" ; engine/events/checktime.asm
-	"Special - TrainerHouse" ; engine/events/specials.asm
+
+	; engine/events/specials.asm
+	"Special - SpecialsPointers"
+	"DummySpecial_c224"
+	"SetPlayerPalette"
+	"GameCornerPrizeMonCheckDex"
+	"UnusedSetSeenMon"
+	"FindPartyMonAboveLevel - FoundNone"
+	"NameRival"
+	"NameRater"
+	"OverworldTownMap"
+	"UnownPrinter"
+	"DisplayLinkRecord"
+	"PlayersHousePC"
+	"CheckMysteryGift"
+	"GetMysteryGiftItem"
+	"BugContestJudging"
+	"MapRadio"
+	"UnownPuzzle"
+	"SlotMachine - CheckCoinsAndCoinCase"
+	"ClearBGPalettesBufferScreen"
+	"ScriptReturnCarry - CheckLuckyNumberShowFlag"
+	"SnorlaxAwake"
+	"PlayCurMonCry"
+	"GameboyCheck"
+	"FadeOutMusic"
+	"Diploma"
+	"PrintDiploma"
+	"TrainerHouse"
+
 	"_PrintNum" ; engine/math/print_num.asm
-	"HealParty - HealPartyMon" ; engine/pokemon/health.asm
-	"ComputeHPBarPixels - ShortHPBar_CalcPixelFrame" ; main.asm
+
+	; engine/pokemon/health.asm
+	"HealParty - HealPartyMon"
+	"ComputeHPBarPixels - AnimateHPBar"
+
+	"FieldMoveJumptableReset - UnknownText_0xd1d0" ; engine/events/overworld.asm
+	"_ReceiveItem - GetItemPrice" ; engine/items/items.asm
+	"_HandlePlayerStep - UpdateOverworldMap" ; engine/overworld/player_step.asm
+	"_AnimateHPBar - ShortHPBar_CalcPixelFrame" ; engine/battle/anim_hp_bar.asm
 	"TryAddMonToParty - BugContest_SetCaughtContestMon" ; main.asm
 	"_DoItemEffect - GetMthMoveOfCurrentMon" ; engine/items/item_effects.asm
 	"GetPokeBallWobble - WobbleProbabilities" ; engine/battle_anims/pokeball_wobble.asm
 	"KnowsMove" ; engine/pokemon/knows_move.asm
 ROMX $04
-	"Pack - UseRegisteredItem" ; main.asm
+	"Pack - PackGFX" ; engine/items/pack.asm
+	"_InitializeStartDay - CopyDayHourMinToHL" ; engine/overworld/time.asm
+	"CanLearnTMHMMove - TMHMMoves" ; engine/items/tmhm2.asm
+	"_NamingScreen - MailEntry_Lowercase" ; engine/menus/naming_screen.asm
+
+	; engine/events/misc_scripts.asm
+	"Script_AbortBugContest"
+	"FindItemInBallScript"
+	"HealMachineAnim"
+
+	"Script_BattleWhiteout - GetWhiteoutSpawn" ; engine/events/whiteout.asm
+	"Script_ForcedMovement" ; engine/events/forced_movement.asm
+	"ItemFinder" ; engine/events/itemfinder.asm
+	"StartMenu - UseRegisteredItem" ; engine/menus/start_menu.asm
 	"Elevator - ElevatorFloorNames" ; engine/events/elevator.asm
 
 	; engine/events/bug_contest/contest.asm
@@ -66,9 +135,11 @@ ROMX $04
 	"CheckFacingTileForStdScript - TileCollisionStdScripts"
 	"Script_JumpStdFromRAM"
 
-	"_BugContestJudging - BugCatchingContestantEventFlagTable" ; main.asm
+	"_BugContestJudging - ContestScore" ; engine/events/bug_contest/judging.asm
+	"ApplyPokerusTick" ; engine/events/pokerus/apply_pokerus_tick.asm
 
 	; engine/events/bug_contest/contest_2.asm
+	"SelectRandomBugContestContestants - BugCatchingContestantEventFlagTable"
 	"ContestDropOffMons"
 	"ContestReturnMons"
 
@@ -174,7 +245,25 @@ ROMX $09
 	"Strings24f9a"
 	"Function24fb2"
 
-	"SelectQuantityToToss - Kurt_SelectQuantity_InterpretJoypad" ; main.asm
+	"SelectQuantityToToss - SellItem_MenuHeader" ; engine/items/buy_sell_toss.asm
+
+	; engine/menus/trainer_card.asm
+	"TrainerCard - TrainerCard_JohtoBadgesOAM"
+	"CardStatusGFX - CardRightCornerGFX"
+
+	"ProfOaksPC - OakPCText4" ; engine/events/prof_oaks_pc.asm
+
+	; engine/overworld/decorations.asm
+	"InitDecorations"
+	"_PlayerDecorationMenu - DecorationDesc_GiantOrnament"
+	"ToggleMaptileDecorations - PadCoords_de"
+
+	"LevelUpHappinessMod" ; engine/pokemon/level_up_happiness.asm
+	"GetTrainerDVs - TrainerClassDVs" ; engine/battle/read_trainer_dvs.asm
+	"_ReturnToBattle_UseBall" ; engine/battle/returntobattle_useball.asm
+	"ConsumeHeldItem - ConsumableEffects" ; engine/battle/consume_held_item.asm
+	"MoveEffectsPointers - DefenseCurl" ; data/moves/effects_pointers.asm
+	"Kurt_SelectQuantity_InterpretJoypad" ; engine/events/kurt_selectquantity_interpretjoypad.asm
 ROMX $0a
 	; engine/link/link.asm
 	"LinkCommunications - Link_EnsureSync"
@@ -214,7 +303,9 @@ ROMX $0c
 ROMX $0d
 	"DoPlayerTurn - _CheckBattleScene" ; engine/battle/effect_commands.asm
 ROMX $0e
-	"AI_SwitchOrTryItem - TrainerClassAttributes" ; main.asm
+	"AI_SwitchOrTryItem - TextJump_EnemyUsedOn" ; engine/battle/ai/items.asm
+	"AIScoring - AI_50_50" ; engine/battle/ai/scoring.asm
+	"GetTrainerClassName - TrainerClassAttributes" ; engine/battle/read_trainer_attributes.asm
 	"ReadTrainerParty - MysticalmanGroup" ; engine/battle/read_trainer_party.asm
 ROMX $0f
 	"DoBattle - BattleStartMessage" ; engine/battle/core.asm
@@ -298,9 +389,41 @@ ROMX $13
 	"PokeSeer - SeerAdvice5"
 	"GetCaughtGender"
 ROMX $14
-	"SelectMonFromParty - ParString" ; main.asm
-	"ListMoves" ; engine/pokemon/mon_stats.asm
-	"InitList - PokemonNames" ; main.asm
+	; engine/pokemon/party_menu.asm
+	"SelectMonFromParty - YouHaveNoPKMNString"
+	"PrintPartyMenuActionText"
+
+	"DoPoisonStep" ; engine/events/poisonstep.asm
+	"SweetScentFromMenu - UnknownText_0x5072b" ; engine/events/sweet_scent.asm
+	"_Squirtbottle" ; engine/events/squirtbottle.asm
+	"_CardKey" ; engine/events/card_key.asm
+	"_BasementKey" ; engine/events/basement_key.asm
+	"_SacredAsh - UnknownText_0x50845" ; engine/events/sacred_ash.asm
+	"CopyMonToTempMon - GetMonSpecies" ; engine/pokemon/tempmon.asm
+	"PrintMonTypes - Dark" ; engine/pokemon/types.asm
+	"Unreferenced_GetGen1TrainerClassName - Gen1TrainerClassNames" ; engine/battle/unreferenced_getgen1trainerclassname.asm
+
+	; engine/pokemon/mon_stats.asm
+	"DrawPlayerHP - DrawHP"
+	"PrintTempMonStats"
+	"GetGender"
+	"ListMovePP"
+	"Unreferenced_Function50cd0"
+	"Unused_PlaceEnemyHPLevel"
+	"PlaceStatusString - ParString"
+	"ListMoves"
+
+	"InitList" ; engine/link/init_list.asm
+	"CalcLevel - GrowthRates" ; engine/pokemon/experience.asm
+	"_SwitchPartyMons" ; engine/pokemon/switchpartymons.asm
+
+	; engine/gfx/load_pics.asm
+	"GetUnownLetter"
+	"GetMonFrontpic - LoadOrientedFrontpic"
+
+	"InsertPokemonIntoBox - InsertDataIntoBoxOrParty" ; engine/pokemon/move_mon_wo_mail.asm
+	"BaseData" ; data/pokemon/base_stats.asm
+	"PokemonNames" ; data/pokemon/names.asm
 	"Unreferenced_MonPicBanks" ; data/pokemon/unused_pic_banks.asm
 	"UnknownEggPic" ; main.asm
 ROMX $15
@@ -494,13 +617,44 @@ ROMX $22
 	"GetPlayerBackpic - GetKrisBackpic"
 	"KrisBackpic"
 
-	"String_89116 - Unknown_8ba1f" ; main.asm
+	"String_89116 - Function8adcc" ; mobile/mobile_22.asm
+
+	; engine/events/unown_walls.asm
+	"HoOhChamber"
+	"OmanyteChamber"
+	"SpecialAerodactylChamber"
+	"SpecialKabutoChamber"
+	"DisplayUnownWords - _DisplayUnownWords_CopyWord"
+
+	; engine/events/buena.asm
+	"BuenasPassword"
+	"BuenaPrize - BuenaPrizeItems"
+
+	"GiveDratini" ; engine/events/dratini.asm
+	"CheckForMobileBattleRules - Function_HasPartyAnEgg" ; engine/events/battle_tower/rules.asm
+
+	; mobile/mobile_22_2.asm
+	"Function8b342"
+	"Function8b35d"
+	"Function8b363"
+	"Function8b36c - Unknown_8ba1f"
 ROMX $23
 	; engine/tilesets/timeofday_pals.asm
 	"DummyPredef35"
 	"UpdateTimeOfDayPal - GetTimePalFade"
 
-	"DoBattleTransition - BattleStart_CopyTilemapAtOnce" ; main.asm
+	; engine/battle/battle_transition.asm
+	"DoBattleTransition - StartTrainerBattle_ZoomToBlack"
+	"Unreferenced_Function8c7c9"
+
+	; engine/events/field_moves.asm
+	"PlayWhirlpoolSound"
+	"BlindingFlash"
+	"ShakeHeadbuttTree - Cut_Headbutt_GetPixelFacing"
+	"FlyFromAnim - FlyFunction_FrameTimer"
+
+	"MagnetTrain - MagnetTrainTilemap4" ; engine/events/magnet_train.asm
+	"BattleStart_CopyTilemapAtOnce" ; engine/battle/battlestart_copytilemapatonce.asm
 	"ClearSpriteAnims" ; engine/gfx/sprites.asm
 	"PlaySpriteAnimationsAndDelayFrame - BigmonIcon" ; main.asm
 ROMX $24
@@ -600,8 +754,62 @@ ROMX $2e
 	"ReadPartyMonMail - PortraitMailBorderGFX"
 	"ItemIsMail - MailItems"
 ROMX $2f
-	"StdScripts - Movement_ContestResults_WalkAfterWarp" ; engine/events/std_scripts.asm
-	"UnusedPhoneScript - BrotherString" ; main.asm
+	; engine/events/std_scripts.asm
+	"StdScripts"
+	"PokecenterNurseScript"
+	"DifficultBookshelfScript"
+	"PictureBookshelfScript"
+	"MagazineBookshelfScript"
+	"TeamRocketOathScript"
+	"IncenseBurnerScript"
+	"MerchandiseShelfScript"
+	"TownMapScript"
+	"WindowScript"
+	"TVScript"
+	"HomepageScript"
+	"Radio1Script"
+	"Radio2Script"
+	"TrashCanScript"
+	"PCScript"
+	"ElevatorButtonScript"
+	"StrengthBoulderScript"
+	"SmashRockScript"
+	"PokecenterSignScript"
+	"MartSignScript"
+	"DayToTextScript"
+	"GoldenrodRocketsScript"
+	"RadioTowerRocketsScript"
+	"BugContestResultsWarpScript - BugContestResults_CopyContestantsToResults"
+	"InitializeEventsScript"
+	"AskNumber1MScript"
+	"AskNumber2MScript"
+	"RegisteredNumberMScript"
+	"NumberAcceptedMScript"
+	"NumberDeclinedMScript"
+	"PhoneFullMScript"
+	"RematchMScript"
+	"GiftMScript"
+	"PackFullMScript"
+	"RematchGiftMScript"
+	"AskNumber1FScript"
+	"AskNumber2FScript"
+	"RegisteredNumberFScript"
+	"NumberAcceptedFScript"
+	"NumberDeclinedFScript"
+	"PhoneFullFScript"
+	"RematchFScript"
+	"GiftFScript"
+	"PackFullFScript"
+	"RematchGiftFScript"
+	"GymStatue1Script"
+	"GymStatue2Script"
+	"ReceiveItemScript"
+	"ReceiveTogepiEggScript"
+	"GameCornerCoinVendorScript - CoinVendor_IntroScript"
+	"HappinessCheckScript"
+	"Movement_ContestResults_WalkAfterWarp"
+
+	"UnusedPhoneScript" ; engine/phone/scripts/unused.asm
 	"MomPhoneCalleeScript - MomPhoneLectureScript" ; engine/phone/scripts/mom.asm
 	"BillPhoneCalleeScript - BillPhoneCallerScript" ; engine/phone/scripts/bill.asm
 	"ElmPhoneCalleeScript - ElmPhoneCallerScript" ; engine/phone/scripts/elm.asm
@@ -673,7 +881,13 @@ ROMX $37
 	"Tileset Data 6" ; (not splitting) gfx/tilesets.asm
 ROMX $38
 	"RotateUnownFrontpic - UnownPrinter_GBPrinterRectangle" ; engine/events/print_unown_2.asm
-	"Unknown_e00ed - LZ_e2221" ; main.asm
+
+	; engine/games/card_flip.asm
+	"Unknown_e00ed"
+	"_CardFlip - CardFlipTilemap"
+
+	"_UnownPuzzle - OmanytePuzzleLZ" ; engine/games/unown_puzzle.asm
+	"_DummyGame - LZ_e2221" ; engine/games/dummy_game.asm
 
 	; engine/pokemon/bills_pc.asm
 	"_DepositPKMN - PCString_NoReleasingEGGS"
@@ -830,10 +1044,10 @@ ROMX $3f
 ROMX $40
 	; mobile/mobile_40.asm
 	"Function100000 - UnknownText_0x1021f4"
-		"Function100000 - UnknownText_0x1021f4 (2)"
-		"Function100000 - UnknownText_0x1021f4 (3)"
-		"Function100000 - UnknownText_0x1021f4 (4)"
-		"Function100000 - UnknownText_0x1021f4 (5)"
+	"Function100000 - UnknownText_0x1021f4 (2)"
+	"Function100000 - UnknownText_0x1021f4 (3)"
+	"Function100000 - UnknownText_0x1021f4 (4)"
+	"Function100000 - UnknownText_0x1021f4 (5)"
 	"Function1021f9 - Palettes_1032e2"
 	"Function103302 - MenuData_103648"
 	"Function103654"
@@ -901,7 +1115,7 @@ ROMX $45
 	"MobileStudium - MobileStudium_JumptableIncrement"
 ROMX $46
 	"Function118000 - TilemapPack_11bb7d"
-		"Function118000 - TilemapPack_11bb7d (2)"
+	"Function118000 - TilemapPack_11bb7d (2)"
 ROMX $47
 	"BattleTowerText - BTWinF15" ; engine/events/battle_tower/trainer_text.asm
 ROMX $48

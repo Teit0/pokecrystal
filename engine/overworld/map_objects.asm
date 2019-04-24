@@ -1,3 +1,7 @@
+; FLOAT: Referred to by ReanchorBGMap_NoOAMUpdate
+; FLOAT: Must be in the same bank as CanObjectMoveInDirection
+SECTION "Facings - InitSprites", ROMX, BANK[$01]
+
 INCLUDE "data/sprites/facings.asm"
 
 INCLUDE "data/sprites/map_objects.asm"
@@ -1836,7 +1840,7 @@ Function5000: ; unscripted?
 	ret
 
 GetMovementByte:
-	ld hl, wMovementDataPointer
+	ld hl, wMovementDataBank
 	call _GetMovementByte
 	ret
 

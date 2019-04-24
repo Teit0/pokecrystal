@@ -587,7 +587,7 @@ FixDataForLinkTransfer:
 	ld [hli], a
 	dec b
 	jr nz, .loop3
-	ld hl, wTimeCapsulePartyMon1 - 1 + 6
+	ld hl, wTimeCapsulePartyMon1 - 1 + PARTY_LENGTH
 	ld de, wc612
 	lb bc, 0, 0
 .loop4
