@@ -1,7 +1,7 @@
 SECTION "HandleNewMap - InitCommandQueue", ROMX
 
 HandleNewMap:
-	call ClearUnusedC7E8
+	call ClearUnusedMapBuffer
 	call ResetMapBufferEventFlags
 	call ResetFlashIfOutOfCave
 	call GetCurrentMapSceneID

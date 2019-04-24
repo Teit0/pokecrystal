@@ -1840,7 +1840,7 @@ Function5000: ; unscripted?
 	ret
 
 GetMovementByte:
-	ld hl, wMovementDataPointer
+	ld hl, wMovementDataBank
 	call _GetMovementByte
 	ret
 
