@@ -123,6 +123,9 @@ mergegroup(["CantCutScript", "TryCutOW"])
 # These assets belong together...
 mergegroup(["CardStatusGFX", "LeaderGFX", "LeaderGFX2", "BadgeGFX", "BadgeGFX2", "CardRightCornerGFX"])
 
+# These scripts may be BANK()-referenced but they really do belong here
+mergegroup(["PhoneScript_JustTalkToThem", "UnknownScript_0x90669", "Function90199"])
+
 
 def unsplitfiles(file1, file2):
     # Make sure that functions in split files stay grouped together if they're referenced by the same things.
@@ -135,12 +138,14 @@ def unsplitfiles(file1, file2):
 
     for label in labels1:
         for ref in refs[label]:
-            if refs[label][ref] and ref in labels2:
+            if ref in labels2:
+                group1.add(label)
                 group2.add(ref)
 
     for label in labels2:
         for ref in refs[label]:
-            if refs[label][ref] and ref in labels1:
+            if ref in labels1:
+                group2.add(label)
                 group1.add(ref)
 
     mergegroup(list(group1))
@@ -154,5 +159,11 @@ mergegroup(["GetTrainerClassName", "GetTrainerAttributes"])
 
 # SPLIT: Fix consequences of mobile/mobile_22.asm and mobile/mobile_22_2.asm split
 unsplitfiles("mobile/mobile_22.asm", "mobile/mobile_22_2.asm")
+
+# SPLIT: Fix consequences of engine/events/happiness_egg.asm and engine/events/haircut.asm split
+mergegroup(["GetFirstPokemonHappiness", "CheckFirstMonIsEgg", "ChangeHappiness"])
+
+# SPLIT: Fix consequences of engine/pokemon/move_mon.asm and engine/pokemon/breedmon_level_growth.asm split
+mergegroup(["GetBreedMon1LevelGrowth", "GetBreedMon2LevelGrowth"])
 
 args.out.write(dumps(sort_groups(groups, True), indent=4))

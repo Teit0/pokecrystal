@@ -21,6 +21,9 @@ for file in args.files:
         labels[label] = file
 
 for label in labels:
+    if label == "\\1_":
+        continue
+
     for ref in refs[label]:
         if not refs[label][ref]:
             if not ref in labels:

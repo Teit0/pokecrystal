@@ -299,6 +299,20 @@ splitfiles("mobile/mobile_22.asm", "mobile/mobile_22_2.asm")
 refs["DoBattleTransition"]["BattleStart_CopyTilemapAtOnce"] = True
 refs["StartTrainerBattle_LoadPokeBallGraphics"]["BattleStart_CopyTilemapAtOnce"] = True
 
+# SPLIT: Untangle engine/events/happiness_egg.asm from engine/events/haircut.asm
+refs["GetFirstPokemonHappiness"]["CopyPokemonName_Buffer1_Buffer3"] = True
+refs["CheckFirstMonIsEgg"]["CopyPokemonName_Buffer1_Buffer3"] = True
+refs["HaircutOrGrooming"]["ChangeHappiness"] = True
+
+# SPLIT: Untangle engine/pokemon/move_mon.asm from engine/pokemon/breedmon_level_growth.asm and engine/events/bug_contest/caught_mon.asm
+refs["RetrieveMonFromDayCareMan"]["GetBreedMon1LevelGrowth"] = True
+refs["RetrieveMonFromDayCareLady"]["GetBreedMon2LevelGrowth"] = True
+refs["BugContest_SetCaughtContestMon"]["GeneratePartyMonStats"] = True
+
+# SPLIT: Untangle engine/phone/phone.asm from engine/pokegear/pokegear.asm
+refs["PokegearPhone_MakePhoneCall"]["Function90199"] = True
+refs["PokegearPhone_UpdateDisplayList"]["Function90380"] = True
+
 # SPLIT: Misc.
 refs["MapObjectMovementPattern"]["CanObjectMoveInDirection"] = True
 refs["ReanchorBGMap_NoOAMUpdate"]["ApplyBGMapAnchorToObjects"] = True
