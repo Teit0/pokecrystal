@@ -239,11 +239,13 @@ sBox12:: box sBox12
 sBox13:: box sBox13
 sBox14:: box sBox14
 
+
 SECTION "SRAM Mobile 1", SRAM
 
 	ds $13
 
 s4_a013:: ds 36 ; a013
+
 
 SECTION "SRAM Mobile 2", SRAM
 
@@ -328,7 +330,9 @@ s5_aa41:: ds 4 ; aa41
 s5_aa47:: db ; aa47
 s5_aa48:: db ; aa48
 
-	ds $2
+	ds $1
+
+s5_aa4a:: db ; aa4a
 
 sMobileLoginPassword:: ds MOBILE_LOGIN_PASSWORD_LENGTH ; aa4b
 
@@ -336,7 +340,11 @@ sMobileLoginPassword:: ds MOBILE_LOGIN_PASSWORD_LENGTH ; aa4b
 
 s5_aa5d:: ds MOBILE_LOGIN_PASSWORD_LENGTH ; aa5d
 
-	ds $1d
+	ds $4
+
+s5_aa72:: db ; aa72
+s5_aa73:: ds 12 ; aa73
+s5_aa7f:: ds 12 ; aa7f
 
 s5_aa8b:: db ; aa8b
 s5_aa8c:: db ; aa8c
@@ -347,8 +355,27 @@ s5_aa8e:: ds 7 * $cc ; aa8e
 
 s5_b023:: ds 105 ; b023
 s5_b08c:: ds 4 ; b08c
+s5_b090:: db ; b090
+s5_b091:: db ; b091
+s5_b092:: ds 31 ; b092
 
-	ds $269
+	ds $100
+
+s5_b1b1:: db ; b1b1
+s5_b1b2:: db ; b1b2
+s5_b1b3:: db ; b1b3
+s5_b1b4:: db ; b1b4
+
+	ds $1e
+
+s5_b1d3:: ; b1d3
+
+	ds $120
+
+s5_b2f3:: db ; b2f3
+s5_b2f4:: ds 4 ; b2f4
+
+	ds $1
 
 s5_b2f9:: db ; b2f9
 s5_b2fa:: db ; b2fa
@@ -358,3 +385,12 @@ s5_b2fb:: db ; b2fb
 
 s5_be45:: db ; be45
 s5_be46:: db ; be46
+
+	ds $1b8
+
+s5_bfff:: db ; bfff
+
+
+SECTION "SRAM Mobile 3", SRAM
+
+s6_a000:: ; a000

@@ -3456,7 +3456,7 @@ Function10174c:
 	ld a, e
 	ld [wcd3b], a
 	ld a, d
-	ld [wcd3c], a
+	ld [wBattleTowerRoomMenu2JumptableIndex], a
 	ld a, c
 	ld [wcd40], a
 	ld a, b
