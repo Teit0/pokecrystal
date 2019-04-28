@@ -327,5 +327,8 @@ refs["BugContestResultsWarpScript"]["Movement_ContestResults_WalkAfterWarp"] = T
 refs["RuinsOfAlphKabutoChamberScientistScript"]["RuinsOfAlphResearchCenterScientist1Text_GotAllUnown"] = True
 refs["Route36NationalParkGate_MapEvents"]["BugCatchingContestExplanationSign"] = True
 refs["CeladonDeptStore6F_MapEvents"]["CeladonDeptStore1FElevatorButton"] = True
+splitfiles("maps/BattleTower1F.asm", "maps/BattleTowerBattleRoom.asm")
+splitfiles("maps/BattleTower1F.asm", "maps/BattleTowerElevator.asm")
+splitfiles("maps/BattleTower1F.asm", "maps/BattleTowerHallway.asm")
 
 args.output.write(dumps(refs, indent=4))
