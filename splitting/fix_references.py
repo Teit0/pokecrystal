@@ -331,4 +331,10 @@ splitfiles("maps/BattleTower1F.asm", "maps/BattleTowerBattleRoom.asm")
 splitfiles("maps/BattleTower1F.asm", "maps/BattleTowerElevator.asm")
 splitfiles("maps/BattleTower1F.asm", "maps/BattleTowerHallway.asm")
 
+# SPLIT: Acknowledged music
+splitfiles("audio/music/wildpokemonvictory.asm", "audio/music/successfulcapture.asm")
+splitfiles("audio/music/lookrival.asm", "audio/music/aftertherivalfight.asm")
+splitfiles("audio/music/johtowildbattle.asm", "audio/music/johtowildbattlenight.asm")
+splitfiles("audio/music/lookrocket.asm", "audio/music/rockettheme.asm")
+
 args.output.write(dumps(refs, indent=4))
