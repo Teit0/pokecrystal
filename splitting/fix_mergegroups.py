@@ -126,6 +126,9 @@ mergegroup(["CardStatusGFX", "LeaderGFX", "LeaderGFX2", "BadgeGFX", "BadgeGFX2",
 # These scripts may be BANK()-referenced but they really do belong here
 mergegroup(["PhoneScript_JustTalkToThem", "UnknownScript_0x90669", "Function90199"])
 
+# SetMemEvent is only used by HiddenItemScript
+mergegroup(["SetMemEvent", "HiddenItemScript"])
+
 
 def unsplitfiles(file1, file2):
     # Make sure that functions in split files stay grouped together if they're referenced by the same things.
