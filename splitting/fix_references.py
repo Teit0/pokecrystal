@@ -323,4 +323,9 @@ refs["Kurt_SelectQuantity_InterpretJoypad"]["BuySellToss_InterpretJoypad"] = Tru
 refs["_DummyGame"]["ret_e00ed"] = True
 refs["BugContestResultsWarpScript"]["Movement_ContestResults_WalkAfterWarp"] = True
 
+# SPLIT: Acknowledged maps
+refs["RuinsOfAlphKabutoChamberScientistScript"]["RuinsOfAlphResearchCenterScientist1Text_GotAllUnown"] = True
+refs["Route36NationalParkGate_MapEvents"]["BugCatchingContestExplanationSign"] = True
+refs["CeladonDeptStore6F_MapEvents"]["CeladonDeptStore1FElevatorButton"] = True
+
 args.output.write(dumps(refs, indent=4))
