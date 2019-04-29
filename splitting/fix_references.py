@@ -231,8 +231,15 @@ refs["AnimationPointers"]["AnimationIdlePointers"] = False
 refs["GetMonAnimPointer"]["UnownAnimationIdlePointers"] = True
 refs["UnownAnimationPointers"]["UnownAnimationIdlePointers"] = False
 
+# GetCardPic expects ChrisCardPic and KrisCardPic to be in the same bank
+refs["GetCardPic"]["KrisCardPic"] = True
+refs["ChrisCardPic"]["KrisCardPic"] = False
+
 # BANK(BattleAnimations) is referenced through the call to GetBattleAnimPointer...
 refs["ClearBattleAnims"]["BattleAnimations"] = True
+
+# These graphics aren't referenced through BANK() in one of the calls.
+refs["GBCOnlyScreen"]["GBCOnlyGFX"] = False
 
 # Fallthrouhgs
 refs["ReadPartyMonMail"]["ReadAnyMail"] = False

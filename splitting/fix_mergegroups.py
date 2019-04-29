@@ -116,18 +116,22 @@ mergegroup(["EggFrames", "CelebiFrames"])
 
 # This function is only ever used by another one in the same bank, it doesn't need a separate section
 mergegroup(["HDMATransfer_FillBGMap0WithBlack", "ReanchorBGMap_NoOAMUpdate"])
-
-# This function is only BANK() referenced because the CallScript abi requires that, but there's no real reason for it.
 mergegroup(["CantCutScript", "TryCutOW"])
-
-# These assets belong together...
-mergegroup(["CardStatusGFX", "LeaderGFX", "LeaderGFX2", "BadgeGFX", "BadgeGFX2", "CardRightCornerGFX"])
+mergegroup(["SetMemEvent", "HiddenItemScript"])
+mergegroup(["Script_JumpStdFromRAM", "CheckFacingTileForStdScript"])
+mergegroup(["UnownDexATile", "UnownDexBTile", "_UnownPrinter"])
+mergegroup(["Strings24f9a", "Function24fb2", "MenuData_0x24f91"])
+mergegroup(["CardStatusGFX", "LeaderGFX", "LeaderGFX2", "BadgeGFX", "BadgeGFX2", "CardRightCornerGFX", "TrainerCard"])
+mergegroup(["ChrisCardPic", "KrisCardPic", "CardGFX", "GetCardPic"])
+mergegroup(["GameFreakLogo", "Copyright_GFPresents"])
+mergegroup(["IntroGrass4GFX", "IntroScene15", "IntroScene19"])
+mergegroup(["MysteryGiftJP_GFX", "Function1057d7"])
+mergegroup(["LinkCommsBorderGFX", "__LoadTradeScreenBorder", "LinkComms_LoadPleaseWaitTextboxBorderGFX"])
+mergegroup(["GFX_171848", "Function170d02"])
+mergegroup(["GBPrinterHPIcon", "GBPrinterLvIcon", "PrintPartyMonPage1"])
 
 # These scripts may be BANK()-referenced but they really do belong here
 mergegroup(["PhoneScript_JustTalkToThem", "UnknownScript_0x90669", "Function90199"])
-
-# SetMemEvent is only used by HiddenItemScript
-mergegroup(["SetMemEvent", "HiddenItemScript"])
 
 
 def unsplitfiles(file1, file2):
