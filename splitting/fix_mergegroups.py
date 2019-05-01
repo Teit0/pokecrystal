@@ -133,6 +133,9 @@ mergegroup(["GBPrinterHPIcon", "GBPrinterLvIcon", "PrintPartyMonPage1"])
 # These scripts may be BANK()-referenced but they really do belong here
 mergegroup(["PhoneScript_JustTalkToThem", "UnknownScript_0x90669", "Function90199"])
 
+# These unused things are related
+mergegroup(["UnreferencedString_HourJP", "UnreferencedString_MinuteJP", "RestartClock"])
+
 
 def unsplitfiles(file1, file2):
     # Make sure that functions in split files stay grouped together if they're referenced by the same things.
