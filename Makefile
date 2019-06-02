@@ -1,8 +1,8 @@
 # Default version of the game to build
-version := crystal
+version := crystal-es
 
 # All of the available versions
-versions := crystal crystal11 crystal-au
+versions := crystal crystal11 crystal-au crystal-es
 
 
 # Variables used to locate the sources
@@ -161,11 +161,11 @@ endif
 # If the hash of the uncompressed file matches, use this .lz instead.
 # This allows pngs to be used for compressed graphics and still match.
 
-hash = $(shell $(dir_output)/tools/md5 $< | cut -c 1-8)
 %.lz: % $(dir_output)/tools/md5 $(dir_output)/tools/lzcomp
-	$(eval filename := $(dir_source)/$*.lz.$(hash))
-	$(if $(wildcard $(filename)),\
-		cp $(filename) $@,\
+	$(eval hash := $(shell $(dir_output)/tools/md5 $< | cut -c 1-8))
+	$(eval filename := $(wildcard $(dir_version)/$*.lz.$(hash) $(dir_source)/$*.lz.$(hash)))
+	$(if $(filename),\
+		cp $(word 1,$(filename)) $@,\
 		$(dir_output)/tools/lzcomp -- $< $@)
 
 
