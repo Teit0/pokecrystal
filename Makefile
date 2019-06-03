@@ -1,5 +1,5 @@
 # Default version of the game to build
-version := crystal-es
+version := crystal
 
 # All of the available versions
 versions := crystal crystal11 crystal-au crystal-es
